@@ -2,11 +2,11 @@ name: first
 on: push
 
 jobs:
-  name: one
-  runs-on: ubuntu-latest
-  steps:
-    - name: intro
-      run: echo Hi hello how are you
-    
-    - name: list files
-      run: ls
+  - name: one
+    runs-on: ubuntu-latest
+    steps:
+      - name: intro
+        run: echo Hi hello how are you
+      
+      - name: list files
+        run: ls
