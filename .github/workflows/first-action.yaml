@@ -5,12 +5,18 @@ env:
   en2: hello
 jobs:
   one:
+    concurrency:
+      group: example-group
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - name: echoes
         run: echo "$en1 and $en2:"
 
   two:
+    concurrency:
+      group: example-group
+      cancel-in-progress: false
     runs-on: ubuntu-latest
     steps:
       - name: echoes
