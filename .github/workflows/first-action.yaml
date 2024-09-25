@@ -11,6 +11,9 @@ jobs:
       - name: intro
         run: echo Hi hello how are you
       
+      - name: install cowsay
+        run: sudo apt-get install cowsay -y
+        
       - name: cowsay command
         run: cowsay "I love linux"
       
