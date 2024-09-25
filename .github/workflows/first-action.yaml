@@ -5,25 +5,19 @@ jobs:
   one:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
+      - name: create file
+        run: echo "Hello" >> one.txt
 
-      - name: intro
-        run: echo Hi hello how are you
-      
-      - name: install cowsay
-        run: sudo apt-get install cowsay -y
+  two:
+    runs-on: ubuntu-latest
+    needs: one
+    steps:
+      - name: List files
+        run: ls -al
 
-      - name: cowsay command
-        run: cowsay "I love linux"
-      
-      - name: list files
-        run: ls -la
-      
-      - name: print readme
-        run: cat README.md
-      
-      - name: shell script
-        run: |
-          chmod +x ./shell-script.sh
-          ./shell-script.sh
+  three:
+    runs-on: ubuntu-latest
+    needs: [one, two]
+    steps:
+      - name: Get content
+        run: cat one.txt 
