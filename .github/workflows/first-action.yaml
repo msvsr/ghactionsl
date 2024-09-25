@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echoes
-        run: echo ${{ env.en1 }}/${{ env.en2 }}
+        run: echo "${{ env.en1 }}/${{ env.en2 }}"
