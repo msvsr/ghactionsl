@@ -18,10 +18,12 @@ jobs:
         run: cowsay "I love linux"
       
       - name: list files
-        run: ls -a
+        run: ls -la
       
       - name: print readme
         run: cat README.md
       
       - name: shell script
-        run: ./shell-script.sh
+        run: |
+          chmod +x ./shell-script.sh
+          ./shell-script.sh
