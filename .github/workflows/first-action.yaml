@@ -5,8 +5,14 @@ jobs:
   one:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v4
+
       - name: intro
         run: echo Hi hello how are you
       
       - name: list files
         run: ls
+      
+      - name: print readme
+        run: cat README.md
