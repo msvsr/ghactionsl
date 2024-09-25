@@ -24,3 +24,9 @@ jobs:
       
       - name: echoes usr and pass
         run: echo "${{ vars.usr }}/${{ secrets.pass }}"
+      
+      - name: echoes sleep
+        timeout-minutes: 1
+        run: |
+          echo "I am going to sleep"
+          sleep 3600
