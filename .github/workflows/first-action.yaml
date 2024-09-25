@@ -11,6 +11,9 @@ jobs:
       - name: intro
         run: echo Hi hello how are you
       
+      - name: cowsay command
+        run: cowsay "I love linux"
+      
       - name: list files
         run: ls
       
