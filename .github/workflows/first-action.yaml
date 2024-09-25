@@ -7,11 +7,22 @@ jobs:
     steps:
       - name: create file
         run: echo "Hello" >> one.txt
+      
+      - name: upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: file
+          path: one.txt
 
   two:
     runs-on: ubuntu-latest
     needs: one
     steps:
+      - name: download
+        uses: actions/download-artifact@v4
+        with:
+          name: file
+      
       - name: List files
         run: ls -al
 
@@ -19,5 +30,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [one, two]
     steps:
+      - name: download
+        uses: actions/download-artifact@v4
+        with:
+          name: file
+          
       - name: Get content
         run: cat one.txt 
