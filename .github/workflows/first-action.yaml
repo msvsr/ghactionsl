@@ -1,39 +1,17 @@
 name: first
 on: push
-
+env:
+  en1: hey
+  en2: hello
 jobs:
   one:
     runs-on: ubuntu-latest
     steps:
-      - name: create file
-        run: echo "Hello" >> one.txt
-      
-      - name: upload
-        uses: actions/upload-artifact@v4
-        with:
-          name: file
-          path: one.txt
+      - name: echoes
+        run: echo $en1 and $en2:hello
 
   two:
     runs-on: ubuntu-latest
-    needs: one
     steps:
-      - name: download
-        uses: actions/download-artifact@v4
-        with:
-          name: file
-      
-      - name: List files
-        run: ls -al
-
-  three:
-    runs-on: ubuntu-latest
-    needs: [one, two]
-    steps:
-      - name: download
-        uses: actions/download-artifact@v4
-        with:
-          name: file
-          
-      - name: Get content
-        run: cat one.txt 
+      - name: echoes
+        run: echo ${{ env.en1 }}/${{ env.en2 }}
