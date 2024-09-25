@@ -13,12 +13,15 @@ jobs:
       
       - name: install cowsay
         run: sudo apt-get install cowsay -y
-        
+
       - name: cowsay command
         run: cowsay "I love linux"
       
       - name: list files
-        run: ls
+        run: ls -a
       
       - name: print readme
         run: cat README.md
+      
+      - name: shell script
+        run: ./shell-script.sh
