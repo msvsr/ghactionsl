@@ -1,5 +1,5 @@
 name: first
-on: push
+on: workflow_dispatch
 env:
   en1: hey
   en2: hello
