@@ -15,3 +15,6 @@ jobs:
     steps:
       - name: echoes
         run: echo "${{ env.en1 }}/${{ env.en2 }}"
+      
+      - name: echoes usr and pass
+        run: echo "${{ vars.usr }}/${{ secrets.pass }}"
