@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echoes
-        run: echo $en1 and $en2:hello
+        run: echo "$en1 and $en2:"
 
   two:
     runs-on: ubuntu-latest
